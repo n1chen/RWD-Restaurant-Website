@@ -1,0 +1,521 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.img {
+	max-width: 100%;
+	height: auto;
+}
+
+.wrap {
+	margin: 0 auto;
+	max-width: 1024px;
+}
+
+/* banner start */
+.banner {
+	position: relative;
+	max-width: 1024px;
+	margin: 0 auto;
+	height: 409px;
+	background: url(img拷貝/header_desktop.png);
+	z-index: 1;
+	/* display: flex;
+	justify-content: space-between; */
+}
+
+.header {
+	height: 56px;
+	position: relative;
+	background-color: black;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+
+}
+
+.logo img {
+	padding-top: 16px;
+	padding-left: 42px;
+	width: 120px;
+	height: 24px;
+}
+
+.menu {
+	display: flex;
+	;
+}
+
+.menu li {
+	float: left;
+}
+
+.menu li a {
+	display: block;
+	color: #fff;
+	padding: 1em;
+	text-decoration: none;
+}
+
+/*在PC上隱藏漢堡選單*/
+.showmenu {
+	display: none;
+}
+
+/* header end */
+
+.title {
+	position: absolute;
+	text-align: center;
+	z-index: 2;
+	color: #fff;
+	left: 282px;
+	top: 123px;
+	padding: 20px;
+	background-color: rgba(0, 0, 0, 0.35);
+}
+
+.title h2 {
+	max-width: 396px;
+	font-size: 36px;
+	padding-bottom: 16px;
+}
+
+.title p {
+	line-height: 1.25;
+}
+
+
+/* banner end */
+@media (max-width:767px) {
+
+	/* .show-menu-btn,
+	.hide-menu-btn {
+		display: block;
+	}
+
+	.menu {
+		position: fixed;
+		width: 100%;
+		height: 30%;
+		background: rgba(0, 0, 0, 0.8);
+		right: -100%;
+		top: 0;
+		text-align: center;
+		line-height: normal;
+		padding: 80px 0;
+		transition: 0.7s;
+		z-index: 1111;
+	}
+
+	.menu a {
+		width: 98%;
+		display: block;
+		font-size: 30px;
+		padding: 30px 0;
+	}
+
+	.hide-menu-btn {
+		position: absolute;
+		top: 30px;
+		right: 30px;
+	}
+
+	#chk:checked~.menu {
+		right: 0;
+	} */
+	.menu {
+		/*隱藏選單開始*/
+		max-height: 0px;
+		overflow: hidden;
+		/*隱藏選單結束*/
+		transition: max-height 0.5s;
+		margin-top: 1px;
+		/*絕對定位疊在網頁上*/
+		position: absolute;
+		z-index: 100;
+		/*header 80px+1px boder 線條*/
+		top: 55px;
+		left: 0;
+		right: 0;
+		background: rgba(0, 0, 0, 0.35);
+
+	}
+
+	.menu li {
+		float: none;
+		/* border-bottom: 1px dashed #69CA62; */
+	}
+
+	.menu li a {
+		transition: all 0.2s;
+	}
+
+	.menu li a:hover {
+		background: #0F222B;
+		color: #fff;
+	}
+
+	.showmenu {
+		display: block;
+		float: right;
+		margin: 1em;
+
+
+	}
+
+	.showmenu img {
+		max-width: 21px;
+		height: 24px;
+	}
+
+	/*jQ點擊後動態在 body 加上 class */
+	.menu-show .menu {
+		max-height: 500px
+	}
+}
+
+@media(max-width:767px) {
+	.wrap {
+		max-width: 767px;
+	}
+
+	.header {
+		max-width: 767px;
+	}
+
+	.banner {
+		background: url(img拷貝/header_mobile@2x.png) no-repeat;
+		background-position: center;
+		max-width: 100%;
+		height: 420px;
+
+	}
+
+	.title {
+		max-width: 300px;
+		height: 194px;
+		word-break: keep-all;
+		position: absolute;
+		line-height: 1.5;
+		top: 25%;
+		left: 5%;
+		z-index: 1;
+		text-align: center;
+	}
+
+	.title h2 {
+		font-size: 36px;
+		padding-bottom: 16px;
+	}
+
+	.title p {
+		line-height: 1.5;
+	}
+
+}
+
+@media (max-width:375px) {
+	.banner {
+		background: url(img拷貝/header_mobile.png) no-repeat;
+		background-position: center;
+		max-width: 100%;
+		/* height: 420px; */
+
+	}
+}
+
+/* news start */
+.container {
+	background: #f1dfd2;
+	padding-top: 50px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 1024px;
+	justify-content: center;
+	color: rgba(61, 17, 1, 1);
+	font-family: MicrosoftJhengHeiRegular;
+
+}
+
+.container h2 {
+	width: 1024px;
+	font-size: 48px;
+	text-align: center;
+	font-weight: 800;
+	padding-bottom: 5px;
+}
+
+.container p {
+	width: 1024px;
+	text-align: center;
+
+}
+
+.login {
+	margin-top: 35px;
+	width: 300px;
+	height: 273px;
+	border-top: 3px solid #ed8a20f4;
+	background: #EFE9E7;
+	box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.16);
+
+}
+
+.login h3 {
+	width: 300px;
+	padding-top: 12px;
+	padding-bottom: 16px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.login form {
+	display: flex;
+	flex-direction: column;
+	line-height: 1.75;
+}
+
+.login label {
+	margin-left: 15px;
+	width: 270px;
+	padding-bottom: 2px;
+	font-size: 16px;
+}
+
+.login input {
+	margin-left: 15px;
+	width: 270px;
+	height: 35px;
+	margin-bottom: 10px;
+	background: #FFFFFF;
+	border: 1px solid #CCCCCC;
+	box-shadow: inset 0px 1px 0px 0px #ECECEC;
+	border-radius: 3px;
+}
+.login .btn{
+	margin-top: 25px;
+	display: flex;
+	justify-content: center;
+	margin-right: 7px;
+}
+.login .btn .submit{
+	width: 125px;
+	height: 35px;
+}
+
+@media (max-width: 767px) {
+	/* .news .item{
+		width: 98%;
+		padding-left: 1%;
+		padding-right: 1%;
+	} */
+
+}
+
+/* news end */
+
+
+/* footer start */
+.footer {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 40px;
+	padding-right: 40px;
+	background: #f1dfd2;
+}
+
+.message {
+	display: flex;
+}
+
+.message li {
+	max-width: 299px;
+}
+
+.message li h3 {
+	font-size: 24px;
+	font-family: MicrosoftJhengHeiRegular;
+	color: #3D1101;
+	padding-bottom: 16px;
+}
+
+.message li p {
+	line-height: 1.25;
+	font-size: 16px;
+	font-family: MicrosoftJhengHeiRegular;
+	color: #3D1101;
+}
+
+.pic {
+	max-width: 245px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: end;
+
+}
+
+.icon img {
+	padding-top: 22px;
+	padding-left: 11px;
+	max-width: 31px;
+	height: 36px;
+}
+
+@media(max-width:767px) {
+	.footer {
+		max-width: 767px;
+		flex-direction: column;
+	}
+
+	.message {
+		flex-direction: column;
+	}
+
+	.message li {
+		padding-bottom: 30px;
+	}
+
+	.pic {
+		padding-top: 30px;
+	}
+
+}
+
+/* footer end */
